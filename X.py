@@ -263,3 +263,45 @@ print(v)
 ind=int(input("sor: "))
 sortByRow(v,ind)
 print(v)
+
+#20
+
+import numpy as np
+
+m = np.random.randint(1,5,(3,4))
+print(m)
+colSum = m.sum(axis=0) #oszlop axis=0
+rowSum = m.sum(axis=1) #sor axis=1
+print(colSum)
+print(rowSum)
+
+#21
+
+import numpy as np
+
+m = np.random.randint(1,2,(3,3))
+print(m)
+colSum = m.sum(axis=0)
+print(colSum)
+print(np.sum(colSum==colSum[0]))
+print(colSum.size)
+if colSum.size==(np.sum(colSum==colSum[0])):
+    print(True)
+else:
+    print(False)
+
+#22
+
+def rowColSum(x):
+    print(x)
+    colSum = x.sum(axis=0)
+    rowSum = x.sum(axis=1)
+    return np.sum(colSum == colSum[0]) + np.sum(rowSum == colSum[0]) == colSum.size + rowSum.size
+
+m=np.ones((5,5))
+n=np.random.randint(1,100,(5,5))
+print(rowColSum(m))
+print(rowColSum(n))
+
+#23
+
