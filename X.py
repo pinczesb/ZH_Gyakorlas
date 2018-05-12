@@ -111,3 +111,39 @@ print(inverseVector(v))
 
 #9
 
+import numpy as np
+
+v=np.random.randint(1,100,5)
+print(v)
+print(v.max())
+print(v.min())
+ind=np.where(v==v.max())
+ind2=np.where((v==v.min()))
+print(ind,ind2)
+
+#10
+
+import numpy as np
+
+x=np.random.randint(1,10,5)
+x[x==x.max()]=-1
+print(x)
+
+#11
+
+import numpy as np
+
+def sortVector(v):
+    n=v.size
+    for i in range(n-1):
+        for j in range(i+1,n):
+            if v[i]>v[j]:
+                v[i],v[j]=v[j],v[i]
+    return v
+
+v=np.random.randint(1,10,5)
+print(v)
+print(sortVector(v))
+
+#12
+
