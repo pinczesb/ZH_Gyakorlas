@@ -236,3 +236,30 @@ print(isSorted(v2))
 
 #18
 
+import numpy
+
+def sortByCol(v,ind):
+    for i in range(v.shape[0]):
+        for j in range(i+1,v.shape[0]):
+            if v[i][ind]>v[j][ind]: #sor,oszlop
+                v[i][ind],v[j][ind]=v[j][ind],v[i][ind]
+
+v=np.random.randint(1,100,(4,5))
+print(v)
+ind=int(input("oszlop: "))
+sortByCol(v,ind)
+print(v)
+
+#19
+
+def sortByRow(v,ind):
+    for i in range(v.shape[1]):
+        for j in range(i+1,v.shape[1]):
+            if v[ind][i]>v[ind][j]: #sor,oszlop
+                v[ind][i],v[ind][j]=v[ind][j],v[ind][i]
+
+v=np.random.randint(10,50,(4,5))
+print(v)
+ind=int(input("sor: "))
+sortByRow(v,ind)
+print(v)
