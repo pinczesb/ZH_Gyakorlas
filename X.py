@@ -147,3 +147,22 @@ print(sortVector(v))
 
 #12
 
+import numpy as np
+
+v=np.arange(1,20)
+print(v)
+v[(v<8) & (v>2)]=-1
+print(v)
+
+#13
+
+import numpy as np
+
+q=np.arange(1,100)
+q[(q>5) & (q<50)]=-1
+q[q==q.max()]=555
+q[q==q.min()]=555
+print(q)
+
+#14
+
