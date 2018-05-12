@@ -303,5 +303,31 @@ n=np.random.randint(1,100,(5,5))
 print(rowColSum(m))
 print(rowColSum(n))
 
+#22/b
+
+def isRowColSumEq(m):
+    print(m)
+    colSum=m.sum(axis=0)
+    rowSum=m.sum(axis=1)
+    return np.sum(colSum==colSum[0])+np.sum(rowSum==rowSum[0])==colSum.size+rowSum.size
+
+m=np.ones((4,4))
+print(isRowColSumEq(m))
+n=np.random.randint(1,3,(2,2))
+print(isRowColSumEq(n))
+
 #23
 
+import numpy as np
+
+m=np.random.randint(1,50,(4,5))
+print(m)
+print("-------------------")
+print(m.shape)
+for i in range(0,m.shape[1]):
+    for j in range(0,m.shape[0]):
+        x=(m[:,2]) #sor oszlop
+        y=(m[j,i])
+print("-------------------")
+print(x)
+print(y)
