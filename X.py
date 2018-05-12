@@ -190,3 +190,49 @@ for j in v:
 
 #16
 
+def sortVector(v):
+    n=v.size
+    for i in range(n-1):
+        for j in range(i+1,n):
+            if v[i]>v[j]:
+                v[i],v[j]=v[j],v[i]
+    return v
+
+e = np.random.randint(1,50,1500)
+print(e)
+start = t.time()
+e1 = sortVector(e)
+ended = t.time()
+print(e1)
+print('{:.3f}'.format(ended-start))
+
+#17
+
+v=np.random.randint(1,100,10)
+print(v)
+
+def isSorted(v):
+    c=1
+    for i in range(0,v.size):
+        for j in range(i+1,v.size):
+            if v[i]<=v[j]:
+                c=c+1
+        if c==v.size:
+            return True
+        return False
+
+def sortVector(v):
+    n=v.size
+    for i in range(n-1):
+        for j in range(i+1,n):
+            if v[i]>v[j]:
+                v[i],v[j]=v[j],v[i]
+    return v
+
+print(isSorted(v))
+v2=sortVector(v)
+print(v2)
+print(isSorted(v2))
+
+#18
+
