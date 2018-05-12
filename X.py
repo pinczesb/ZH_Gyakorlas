@@ -13,9 +13,6 @@ while n!=0:
 
 #2
 
-a=12
-b=16
-
 def gcd(a,b):
     if b > a:
         return gcd(b,a) #16,12 #12,4
@@ -24,7 +21,13 @@ def gcd(a,b):
         return b
     return gcd(r,b) #4 #12
 
-print(gcd(a,b))
+
+def lcm(a, b):
+    """Compute the lowest common multiple of a and b"""
+    return a * b / gcd(a, b)
+
+print(gcd(12,16))
+print(lcm(12,16))
 
 #3
 
