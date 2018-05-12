@@ -84,3 +84,30 @@ try:
     outFile.close()
 except FileNotFoundError:
     print("wrong")
+
+#7
+
+import numpy as np
+
+x=np.arange(1,6)
+print(x)
+print(x.size) #5
+print(x[x.size-1]) #5
+
+#8
+
+import numpy as np
+
+def inverseVector(v):
+    b=np.array(v[v.size-1])
+    for i in range(v.size-2,-1,-1): #hátulról második elemtől 0-ig, visszafele
+        b=np.append(b,v[i])
+    return b
+
+v=np.arange(1,6)
+print(v.size)
+print(v)
+print(inverseVector(v))
+
+#9
+
