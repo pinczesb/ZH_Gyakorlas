@@ -166,3 +166,27 @@ print(q)
 
 #14
 
+n=int(input("n: "))
+v=np.random.randint(1,100,5)
+print(v)
+e=np.abs(v-n)
+print(e)
+print(v[e==e.min()])
+
+#15
+
+import numpy as np
+
+v=np.random.randint(-10,10,10)
+print(v)
+sum0=0
+for i in v:
+    if i==0:
+        sum0+=1
+sumneg=0
+for j in v:
+    if j<0:
+        sumneg+=1
+
+#16
+
