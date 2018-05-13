@@ -486,3 +486,31 @@ print("The longest word in dictionary is '{}' and its indice is: {}".format(lw,i
 
 #32
 
+month = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+nums=range(1,13)
+Dict=dict(zip(month,nums))
+print(Dict)
+
+#33
+
+D_Months={"JAN":1, "FEB":2, "MAR":3, "APR":4, "MAY":5, "JUN":6, "JUL":7, "AUG":8, "SEP":9, "OCT":10, "NOV":11, "DEC":12}
+#8-MAR-85
+def dateConv(string):
+    st=string.split("-")
+    if int(st[2])<19:
+        year="20"+st[2]
+    else:
+        year="19"+st[2]
+    return (int(year),D_Months[st[1]],int(st[0]))
+
+str = input("Give me a date in format (dd-MMM-yy): ")
+print(dateConv(str))
+
+#34
+
+dict={}
+dict[1]=[7,8]#lista - value
+print(dict)
+if 1 in dict:
+    dict[1].append(9)
+print(dict)
