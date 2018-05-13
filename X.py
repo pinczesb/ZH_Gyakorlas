@@ -406,5 +406,83 @@ print(m)
 print('--------------')
 print(listOfSpecialElements(m))
 
-#28
+#28 DICTIONARIES
+
+dict={"Bob":"dog", "Henry":"cat", "Thomas":"lamb"}
+print(dict)
+print(dict["Bob"]) #dog
+print(len(dict)) #3 key-value párok egynek számítanak
+
+print("Henry" in dict) #Key-in dict - True
+print("cat" in dict) #Value - False
+
+a=dict
+print(a)
+
+for key in dict:
+    print(key,"is a",dict[key]) #k-key
+
+dict2={v:k for k,v in dict.items()}
+print(dict2)
+
+#29
+
+L=[]
+str=open("input.txt","r")
+for i in str:
+    L.append(i)
+print(L[2]) #3.sor
+
+#30
+
+def clearRow(str):
+    newR=""
+    for ch in str:
+        if ch not in string.punctuation and ch!="\n":
+            newR+=ch.lower()
+    return newR
+
+fin=open("input.txt","r")
+dict={}
+for row in fin:
+    crow=clearRow(row)
+    for word in crow.split(" "):
+        if word in dict:
+            dict[word]+=1
+        else:
+            dict[word]=1
+for k in dict:
+    print(k,":",dict[k])
+
+L1=[]
+L2=[]
+for i in dict:
+    L1.append(dict[i]) #values
+    L2.append(i) #keys
+max=max(L1)
+idx=0
+while L1[idx]!=max:
+    idx+=1
+print("The word that occurs the most is:",L2[idx])
+
+
+#31
+
+L1=[]
+L2=[]
+for i in dict:
+    L1.append(dict[i]) #values
+    L2.append(i) #keys
+lw=L2[0]
+for i in range(len(L2)):
+    if len(L2[i])>len(lw):
+        lw=L2[i]
+
+idx=0
+while L2[idx]!=lw:
+    idx+=1
+
+print("The longest word in dictionary is '{}' and its indice is: {}".format(lw,idx))
+
+#32
 
