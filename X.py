@@ -391,3 +391,20 @@ print(x)
 
 #27
 
+import numpy as np
+
+def listOfSpecialElements(m): #Elemek+idx - eredeti indexükkel oszthatóak
+    L=[]
+    for i in range(m.shape[0]):
+        for j in range(m.shape[1]):
+            if m[i,j]%(i+1)==0 and m[i,j]%(j+1)==0:
+                L.append((m[i,j],i,j))
+    return L
+
+m = np.random.randint(10,45,(4,5))
+print(m)
+print('--------------')
+print(listOfSpecialElements(m))
+
+#28
+
