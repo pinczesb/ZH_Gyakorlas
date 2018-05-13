@@ -334,3 +334,60 @@ for i in range(0,m.shape[1]):
 print("-------------------")
 print(x)
 print(y)
+
+#24
+
+import numpy as np
+
+m=np.random.randint(1,3,(3,3))
+print(m)
+print("-------------")
+print(m[:,:]>1)
+print("-------------")
+for i in range(m.shape[1]):
+    print(m[:,i])
+print("-------------")
+print(m[:,2])
+print("-------------")
+for i in range(m.shape[1]):
+    print(m[:,i] > 1)
+
+#25
+
+import numpy as np
+
+def indicesCol(m):
+    L=[]
+    for i in range(0,m.shape[1]):
+        if np.sum(m[:,i]==0)>0:
+            if np.sum(m[:,i]==0)*2<=np.sum(m[:,i]<0):
+                L.append(i)
+    return L
+
+str = input('Give the shape of array:')
+n,m = str.split(',')
+m = np.random.randint(-1,1,(int(n),int(m)))
+print(m)
+print(indicesCol(m))
+
+#26
+
+import numpy as np
+
+m=np.random.randint(0,2,(4,4))
+print(m)
+print("---")
+for i in range(m.shape[0]):
+    print(np.sum(m[i, :] == 0))
+print("---")
+for i in range(m.shape[0]):
+    print(np.sum(m[i, :] > 0))
+print("---")
+x=[] #annak a sornak az indexe, amiben megegyezik a 0-k és 1-ek száma
+for i in range(m.shape[0]):
+    if np.sum(m[i, :] == 0) == np.sum(m[i, :] > 0):
+        x.append(i)
+print(x)
+
+#27
+
