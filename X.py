@@ -599,3 +599,38 @@ print(a_set)
 print(remover(a_set,"hulu"))
 
 #40
+
+a=set("abc")
+b=set("abcdef")
+print(b.issuperset(a))
+print(a.issubset(b))
+
+#41
+
+a={1,2,3,4}
+a.update({5,6,7,"str"},"str")
+a.add("x") #csak egy
+a.add(666)
+print(a)
+
+#42
+
+import random
+
+wheel=set(range(0,37))
+wheel.add("00")
+
+odd=set(range(1,37,2))
+even=set(range(2,37,2))
+reds={1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36}
+blacks=wheel-reds
+lower=set(range(1,19))
+higher=set(range(19,37))
+
+sets={"even":even,"odd":odd,"reds":reds,"blacks":blacks,"lower":lower,"higher":higher}
+
+num=random.choice(list(wheel))
+
+for s in sets:
+    if num in sets[s]:
+        print("The number {} is {}".format(num,s))
