@@ -673,4 +673,79 @@ print(setA - setB)
 
 #45
 
+import sys
+
+def sumN(n):
+    sum=0
+    string=""
+    for i in range(1,n+1):
+        sum+=i
+    for i in range(1, n):
+        string+=str(i)+"+"
+    string+=str(n)+"="+str(sum)
+    return string
+
+outfile=open("output2.txt","w")
+print(sumN(5),file=outfile)
+outfile.close()
+
+#46
+
+import sys
+
+def ConvNtoDate(seconds):
+    temp=seconds
+    years=temp//(365*24*60*60)
+    temp-=(years*365*24*60*60)
+    days=temp//(24*60*60)
+    temp-=(days*24*60*60)
+    hours=temp//(24*60)
+    temp-=(hours*24*60)
+    minutes=temp//60
+    secs=temp-(minutes*60)
+    return "{} seconds are {} years {} days {} hours {} minutes and {} seconds".format(seconds,years,days,hours,minutes,secs)
+
+out=open("output2.txt","w")
+n=int(sys.argv[1])
+print(ConvNtoDate(n),file=out)
+print(sys.argv[1])
+
+#47
+
+import sys
+
+def occurence(spec,str):
+    oc=0
+    for i in str:
+        if i==spec:
+            oc+=1
+    return oc
+
+string=str(sys.argv[:])
+print(occurence("q",string)
+
+#48
+
+import sys
+import numpy as np
+
+out=open("output2.txt","w")
+n=int(sys.argv[1])
+v=np.random.randint(0,101,n)
+print(v,np.sum(v),file=out)
+out.close()
+
+#49
+
+import random
+
+def gen(n):
+    for i in range(n):
+        print(random.randint(0,100))
+
+print(gen(5))
+
+#50
+
+
 
