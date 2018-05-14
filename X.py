@@ -634,3 +634,16 @@ num=random.choice(list(wheel))
 for s in sets:
     if num in sets[s]:
         print("The number {} is {}".format(num,s))
+
+#43
+
+prime=set(range(2,5001))
+for n in range(2,5001):
+    p=n
+    while p<=5000:
+        p+=n #n többszörösei
+        prime.discard(p) #kivesszük a többszörösöket
+print(prime) #csak a prímek maradnak
+
+#44
+
