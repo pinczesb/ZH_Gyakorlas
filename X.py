@@ -645,5 +645,32 @@ for n in range(2,5001):
         prime.discard(p) #kivesszük a többszörösöket
 print(prime) #csak a prímek maradnak
 
-#44
+#44 ARGS
+
+import sys
+
+print(sys.argv[1:])
+
+def fillList(args):
+    l1=[]
+    l2=[]
+    idx=0
+    for i in args:
+        if i=="L:":
+            idx+=1
+            continue
+        if idx==1:
+            l1.append(i)
+        if idx==2:
+            l2.append(i)
+    return l1,l2
+
+L1,L2=fillList(sys.argv[:])
+print(L1,L2)
+setA=set(L1)
+setB=set(L2)
+print(setA - setB)
+
+#45
+
 
