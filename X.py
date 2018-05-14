@@ -514,3 +514,88 @@ print(dict)
 if 1 in dict:
     dict[1].append(9)
 print(dict)
+
+#35
+
+dict={}
+for d1 in range(1,7):
+    for d2 in range(1,7):
+        if d1+d2 in dict:
+            dict[d1+d2].append((d1,d2))
+        else:
+            dict[d1+d2]=[(d1,d2)]
+
+for k,v in dict.items():
+    print(k,":",v)
+
+#36 SETS
+
+my_set={'a','b','c','c','c'} #nincs ism., nem rendezett
+my_set2={'a',1,3.12145,True}
+
+print(my_set)
+#print(my_set2)
+
+print(len(my_set)) #3
+
+for element in my_set:
+    if element=='b':
+        print(True)
+    print(False)
+print("----------")
+print("q" in my_set) #false
+print("c" in my_set) #true
+
+#37
+
+a_set=set("abcd")
+print(a_set)
+b_set=set("cdef")
+print(b_set)
+
+print("intersection:",a_set & b_set)
+
+print("difference:",a_set - b_set)
+
+print("union:",a_set | b_set)
+
+print("symmetric difference:",a_set ^ b_set)
+
+small_set=set("abc")
+big_set=set("abcdef")
+
+print(small_set<=big_set) #részhalmaz
+print(small_set>=big_set)
+
+#38
+
+a_set=set("abcd")
+print(a_set)
+b_set=set("cdef")
+print(b_set)
+
+a_set.add("x")
+print(a_set)
+
+b_set.clear()
+print(b_set)
+
+a_set.remove("a") #a_set.discar("a") ugyanaz, de nincs hiba, ha nincs elem
+print(a_set)
+
+print(a_set.copy())
+
+#39
+
+a_set=set("abcdefghulu")
+
+def remover(set,word):
+    for i in word:
+        if i in set:
+            set.remove(i)
+    return set
+
+print(a_set)
+print(remover(a_set,"hulu"))
+
+#40
